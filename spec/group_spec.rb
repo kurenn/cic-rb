@@ -28,12 +28,12 @@ describe Cic::Group do
   describe '#all' do
 
     context 'when response is success' do
-      it 'returns an empty array when no reports' do
+      it 'returns an empty array when no groups' do
         mock_request(URL, { groups: [] })
         Cic::Group.all.should be_empty
       end
       
-      it 'returns an array of reports' do
+      it 'returns an array of groups' do
         mock_request(URL, { groups: [@attr] })
         Cic::Group.all.first.should be_instance_of(Cic::Group)
       end

@@ -25,8 +25,8 @@ Gem::Specification.new do |gem|
 
   gem.add_dependency "httparty"
   gem.add_dependency "hashie"
-  gem.add_development_dependency "webmock"
-  gem.add_development_dependency "json"
+  gem.add_dependency "activesupport"
+  gem.add_dependency "json"
   gem.add_development_dependency 'rspec'
   gem.add_development_dependency 'debugger'
   gem.add_development_dependency 'shoulda-matchers'

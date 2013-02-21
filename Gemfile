@@ -4,5 +4,5 @@ source 'https://rubygems.org'
 gemspec
 
 group :development do
-  gem 'webmock', git: 'git@github.com:IcaliaLabs/webmock.git'
+  gem 'webmock', git: 'git@github.com:kurenn/webmock.git'
 end

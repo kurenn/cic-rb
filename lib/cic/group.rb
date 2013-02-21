@@ -1,39 +1,15 @@
-require 'httparty'
-require 'hashie'
+$: << 'lib'
+require 'cic/active_cic'
 
 module Cic
-  class Group
+  class Group < ActiveCic::Base
 
-    BASE_URL = "api.nl.cic.mx/0/nl"
-
-    attr_accessor :attributes
-    attr_reader :raw_attributes
-
-    include HTTParty
-
-    base_uri BASE_URL
-
-    def initialize(group_hash)
-      self.attributes = Hashie::Mash.new(group_hash) 
-      @raw_attributes = group_hash
-    end
-
-    def self.all
-      response = self.get("/groups.json") 
-      if response.success?
-        response.parsed_response['groups'].map { |groups_hash| self.new(groups_hash) } 
-      else
-        raise Cic::Exception::ServerError.new(response.code, response.body) if response.code >= 500
-        raise Cic::Exception::ClientError.new(response.code, response.body) if response.code < 500
-      end
+    def initialize(hash)
+      super(hash)
     end
 
     def id
       self.attributes.id  
-    end
-
-    def method_missing(name, *args)
-      self.attributes.send(name, args)
     end
   end
 end
