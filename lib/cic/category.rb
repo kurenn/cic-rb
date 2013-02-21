@@ -8,6 +8,7 @@ module Cic
       super(hash)
     end
 
+    #Fields reserved from Hashie override
     %w(id type).each do |attr|
       define_method attr do
         self.attributes.send(attr)
