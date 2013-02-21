@@ -27,5 +27,13 @@ module Cic
         raise Cic::Exception::ClientError.new(response.code, response.body) if response.code < 500
       end
     end
+
+    def id
+      self.attributes.id  
+    end
+
+    def method_missing(name, *args)
+      self.attributes.send(name, args)
+    end
   end
 end

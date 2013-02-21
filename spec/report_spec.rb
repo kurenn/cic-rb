@@ -71,4 +71,26 @@ describe Cic::Report do
       end
     end
   end
+
+  describe '#where' do
+    it 'returns reports by group id' do
+      mock_request(URL, { reports: [@attr, @attr] })
+      Cic::Report.where(group_id: 142).should_not be_empty
+    end
+
+    it 'returns reports by category id' do
+      mock_request(URL, { reports: [@attr, @attr] })
+      Cic::Report.where(for_category: 142).should_not be_empty
+    end
+
+    it 'returns reports by until date' do
+      mock_request(URL, { reports: [@attr, @attr] })
+      Cic::Report.where(:until => "2012-01-01").should_not be_empty #YYYY-MM-DD
+    end
+
+    it 'returns reports by group id and category id' do
+      mock_request(URL, { reports: [@attr, @attr] })
+      Cic::Report.where(for_category: 417, for_group: 134).should_not be_empty
+    end
+  end
 end

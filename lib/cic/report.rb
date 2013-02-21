@@ -39,6 +39,17 @@ module Cic
       end
     end
 
+    def self.where(params = {})
+      response = self.get("/reports.json", query: params) 
+      if response.success?
+        response.parsed_response['reports'].map { |report_hash| self.new(report_hash) } 
+       else
+        raise Cic::Exception::ServerError.new(response.code, response.body) if response.code >= 500
+        raise Cic::Exception::ClientError.new(response.code, response.body) if response.code < 500
+      end
+        
+    end
+
     def method_missing(name, *args)
       self.attributes.send(name, args)
     end

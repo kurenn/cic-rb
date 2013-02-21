@@ -23,6 +23,7 @@ describe Cic::Group do
 
   it { should respond_to(:attributes) } 
   it { should respond_to(:raw_attributes) } 
+  it { should respond_to(:id) } 
 
   describe '#all' do
 
