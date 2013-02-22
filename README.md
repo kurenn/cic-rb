@@ -171,7 +171,9 @@ group.name
 
 ## Changelog
 <ul>
-  <li>Current gem version 0.0.1</li>
+  <li>Current gem version 1.0.0</li>
+  <li>Previous gem version 0.0.1</li>
+  <li>Add post method to create reports</li>
 	<li>Refactor for code reuse</li>
 	<li>GET requests for all entities</li>
 </ul>
