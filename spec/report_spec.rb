@@ -97,4 +97,23 @@ describe Cic::Report do
       Cic::Report.where(options).should_not be_empty
     end
   end
+
+  describe '#save' do
+    before(:each) do
+      @params = {
+        content: 'Prueba Kuri jalo',
+        address: 'cataluna 206',
+        origin: 'mailto:jsmith@example.com',
+        return_path: 'mailto:jsmith@example.com',
+        lat: '25.67316978132684',
+        lng: '-100.35339117050171',
+        address: 'cataluna 206',
+        assets: 'http://icalialabs.com/img/logo.png'
+      }
+    end
+    it 'returns true if report was saved successfully' do
+      report = Cic::Report.new(@params)
+      report.save.should be_true
+    end
+  end
 end

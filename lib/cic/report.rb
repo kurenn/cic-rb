@@ -18,6 +18,11 @@ module Cic
       end
     end
 
+    def save 
+      self.class.post("/reports.json", body: self.raw_attributes ) 
+      true #POST always finds its way...
+    end
+
     def self.where(params = {})
       response = self.get("/reports.json", query: params) 
       if response.success?
