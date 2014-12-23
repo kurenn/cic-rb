@@ -8,11 +8,12 @@ require 'cic/version'
 Gem::Specification.new do |gem|
   gem.name          = "cic"
   gem.version       = Cic::VERSION
-  gem.authors       = ["Abraham Kuri Vargas"]
-  gem.email         = ["kurenn@icalialabs.com"]
+  gem.authors       = ["Abraham Kuri Vargas", "Alicia Catalina"]
+  gem.email         = ["kurenn@icalialabs.com", "alicia@icalialabs.com"]
   gem.description   = %q{Communicates the CIC API}
   gem.summary       = %q{CIC Api Integration}
-  gem.homepage      = ""
+  gem.homepage      = "https://github.com/IcaliaLabs/cic-rb"
+  gem.licenses      = ["MIT"]
 
   gem.files         = `git ls-files`.split($/)
   gem.name          = 'cic'
@@ -23,12 +24,12 @@ Gem::Specification.new do |gem|
   gem.test_files    = gem.files.grep(%r{^(test|spec|features)/})
   gem.require_paths = ["lib"]
 
-  gem.add_dependency "httparty"
-  gem.add_dependency "hashie"
-  gem.add_dependency "activesupport"
-  gem.add_dependency "json"
-  gem.add_development_dependency 'rspec'
-  gem.add_development_dependency 'pry-byebug'
-  gem.add_development_dependency 'shoulda-matchers'
+  gem.add_dependency "httparty", '~> 0'
+  gem.add_dependency "hashie", '~> 0'
+  gem.add_dependency "activesupport", '~> 0'
+  gem.add_dependency "json", '~> 0'
+  gem.add_development_dependency 'rspec', '~> 0'
+  gem.add_development_dependency 'pry-byebug', '~> 0'
+  gem.add_development_dependency 'shoulda-matchers', '~> 0'
   gem.test_files  = Dir.glob("{spec}/**/*.rb")
 end
