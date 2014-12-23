@@ -24,12 +24,12 @@ Gem::Specification.new do |gem|
   gem.test_files    = gem.files.grep(%r{^(test|spec|features)/})
   gem.require_paths = ["lib"]
 
-  gem.add_dependency "httparty", '~> 0'
-  gem.add_dependency "hashie", '~> 0'
-  gem.add_dependency "activesupport", '~> 0'
-  gem.add_dependency "json", '~> 0'
-  gem.add_development_dependency 'rspec', '~> 0'
-  gem.add_development_dependency 'pry-byebug', '~> 0'
-  gem.add_development_dependency 'shoulda-matchers', '~> 0'
+  gem.add_dependency "httparty", '~> 0.13.3'
+  gem.add_dependency "hashie", '~> 3'
+  gem.add_dependency "activesupport", '~> 4.2'
+  gem.add_dependency "json", '~> 1.8.1'
+  gem.add_development_dependency 'rspec', '~> 3.1.0'
+  gem.add_development_dependency 'pry-byebug', '~> 2.0.0'
+  gem.add_development_dependency 'shoulda-matchers', '~> 2.7.0'
   gem.test_files  = Dir.glob("{spec}/**/*.rb")
 end
