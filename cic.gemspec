@@ -28,7 +28,7 @@ Gem::Specification.new do |gem|
   gem.add_dependency "activesupport"
   gem.add_dependency "json"
   gem.add_development_dependency 'rspec'
-  gem.add_development_dependency 'debugger'
+  gem.add_development_dependency 'pry-byebug'
   gem.add_development_dependency 'shoulda-matchers'
   gem.test_files  = Dir.glob("{spec}/**/*.rb")
 end
