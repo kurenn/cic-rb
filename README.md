@@ -1,3 +1,7 @@
+[![Code Climate](https://codeclimate.com/github/IcaliaLabs/cic-rb/badges/gpa.svg)](https://codeclimate.com/github/IcaliaLabs/cic-rb)
+[![Test Coverage](https://codeclimate.com/github/IcaliaLabs/cic-rb/badges/coverage.svg)](https://codeclimate.com/github/IcaliaLabs/cic-rb/coverage)
+[![Issue Count](https://codeclimate.com/github/IcaliaLabs/cic-rb/badges/issue_count.svg)](https://codeclimate.com/github/IcaliaLabs/cic-rb)
+
 # CIC Ruby Gem
 
 cic-rb is a client which communicates with the CIC API, and interact
