@@ -6,7 +6,7 @@ volumes:
 
 services:
   app: &app
-    image: icalialabs/sepomex:development
+    image: icalialabs/cic:development
     build:
       context: .
       dockerfile: dev.Dockerfile
@@ -17,7 +17,7 @@ services:
     stdin_open: true
     tty: true
 
-  web:
+  console:
     <<: *app
     command: bin/console
     env_file:
