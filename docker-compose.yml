@@ -1,0 +1,30 @@
+version: "2"
+
+volumes:
+  gems:
+    driver: local
+
+services:
+  app: &app
+    image: icalialabs/sepomex:development
+    build:
+      context: .
+      dockerfile: dev.Dockerfile
+    working_dir: /code
+    volumes:
+      - .:/code
+      - gems:/usr/local/bundle
+    stdin_open: true
+    tty: true
+
+  web:
+    <<: *app
+    command: bin/console
+    env_file:
+      - dev.env
+    
+  test:
+    <<: *app
+    command: bundle exec guard -g god_is_watching
+    env_file:
+      - test.env

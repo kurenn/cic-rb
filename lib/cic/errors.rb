@@ -1,12 +1,11 @@
 module Cic
   class CicError < StandardError; end
 
-  module Exception 
-
+  module Exception
     class APIError < ::Cic::CicError
       attr_accessor :http_status, :response_body
 
-      def initialize(http_status, response_body, error_info = nil)
+      def initialize(http_status, response_body, _error_info = nil)
         message = " [HTTP #{http_status}] #{response_body}"
         super(message)
       end

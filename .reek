@@ -1,0 +1,40 @@
+---
+
+IrresponsibleModule:
+  enabled: false
+InstanceVariableAssumption:
+    enabled: false # This is an error.
+                   # Most of the instance variables
+                   # are initialized
+UncommunicativeParameterName:
+    enabled: false
+UncommunicativeVariableName:
+    enabled: false
+NilCheck:
+    enabled: false
+    
+"app/services":
+  UtilityFunction:
+    enabled: false # Can safely ignore this.
+
+"app/controllers":
+  NestedIterators:
+    enabled: false
+"app/helpers":
+  UtilityFunction:
+    enabled: false
+"lib/errors":
+  DuplicateMethodCall:
+    enabled: false
+  TooManyStatements:
+    enabled: false
+"spec/support":
+  DuplicateMethodCall:
+    enabled: false
+  
+exclude_paths:
+  - lib/legacy
+  - lib/rake/legacy_tasks
+  - db/
+  - spec/
+  - app/helpers/
